@@ -5,9 +5,7 @@ const parseInput = (rawInput: string) =>
   rawInput
     .split("\n")
     .map((row) =>
-      row
-        .split(",")
-        .map((elf) => elf.split("-").map((number) => parseInt(number, 10))),
+      row.split(",").map((elf) => elf.split("-").map((number) => parseInt(number, 10))),
     );
 
 const part1 = (rawInput: string) => {

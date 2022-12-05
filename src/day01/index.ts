@@ -6,9 +6,7 @@ type Elf = number[];
 const parseInput = (rawInput: string): Elf[] => {
   return rawInput
     .split("\n\n")
-    .map((elfStr) =>
-      elfStr.split("\n").map((caloriesStr) => parseInt(caloriesStr, 10)),
-    );
+    .map((elfStr) => elfStr.split("\n").map((caloriesStr) => parseInt(caloriesStr, 10)));
 };
 
 const part1 = (rawInput: string) => {

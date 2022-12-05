@@ -14,15 +14,10 @@ const part1 = (rawInput: string) => {
   const input = parseInput(rawInput);
 
   const letterValues = input
-    .map((line) => [
-      line.slice(0, line.length / 2),
-      line.slice(line.length / 2),
-    ])
+    .map((line) => [line.slice(0, line.length / 2), line.slice(line.length / 2)])
     .map((rucksack) => {
       const letters = rucksack[0].split("");
-      const matchingLetter = letters.find((letter) =>
-        rucksack[1].includes(letter),
-      );
+      const matchingLetter = letters.find((letter) => rucksack[1].includes(letter));
       return matchingLetter as string;
     })
     .map(letterToValue);
@@ -42,9 +37,7 @@ const part2 = (rawInput: string) => {
     .map((groupOfThree) => {
       const letters1 = groupOfThree[0].split("");
 
-      let commonLetters12 = letters1.filter((letter) =>
-        groupOfThree[1].includes(letter),
-      );
+      let commonLetters12 = letters1.filter((letter) => groupOfThree[1].includes(letter));
 
       let commonLetters123 = commonLetters12.find((letter) =>
         groupOfThree[2].includes(letter),
